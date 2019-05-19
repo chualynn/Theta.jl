@@ -1,13 +1,18 @@
 # Theta.jl
 
-A Julia package for computing the Riemann theta function and its
+| **Documentation** | **Build Status** |
+|:-----------------:|:----------------:|
+| [![](https://img.shields.io/badge/docs-dev-blue.svg)](https://chualynn.github.io/Theta.jl/dev) | [![Build
+Status](https://travis-ci.com/chualynn/Theta.jl.svg?branch=master)](https://travis-ci.com/chualynn/Theta.jl) |
+
+Theta.jl is a Julia package for computing the Riemann theta function and its
 derivatives.
 
 For more information, refer to our upcoming preprint.
 
 ## Installation
 
-Download Julia 1.1 and above. Start Julia and run
+Download Julia 1.1. Start Julia and run
 ```julia
 julia> import Pkg
 julia> Pkg.add("Theta")
