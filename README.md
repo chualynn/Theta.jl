@@ -2,8 +2,7 @@
 
 | **Documentation** | **Build Status** |
 |:-----------------:|:----------------:|
-| [![](https://img.shields.io/badge/docs-dev-blue.svg)](https://chualynn.github.io/Theta.jl/dev) | [![Build
-|Status](https://travis-ci.com/chualynn/Theta.jl.svg?branch=master)](https://travis-ci.com/chualynn/Theta.jl) |
+| [![](https://img.shields.io/badge/docs-dev-blue.svg)](https://chualynn.github.io/Theta.jl/dev) | [![Build Status](https://travis-ci.com/chualynn/Theta.jl.svg?branch=master)](https://travis-ci.com/chualynn/Theta.jl) |
 
 Theta.jl is a Julia package for computing the Riemann theta function and its
 derivatives.
