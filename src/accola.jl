@@ -55,7 +55,7 @@ end
 Compute the 8 Accola special theta relations, without taking the product over the signs of the square roots. Return the largest absolute value of the special theta relation.
 """
 function accola(τ::Array{<:Number}, chars=accola_chars())
-    R = RiemannMatrix(τ);
+    R = RiemannMatrix(τ, nderivs=0);
     return accola(R, chars);
 end
 

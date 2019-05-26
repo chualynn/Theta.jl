@@ -17,6 +17,7 @@ include("siegel_transform.jl")
 include("schottky4.jl")
 include("accola.jl")
 include("fgsm.jl")
+include("schottky_null.jl")
 
 export theta
 export RiemannMatrix, random_siegel
@@ -25,5 +26,6 @@ export theta_char, even_theta_char, odd_theta_char, check_azygetic
 export schottky_genus_4, random_nonschottky_genus_4
 export accola_chars, accola, random_nonaccola
 export fgsm_chars, fgsm, random_nonfgsm
+export hessian, schottky_null, min_even_theta_char
 
 end 

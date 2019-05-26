@@ -18,7 +18,7 @@ end
 Compute the FGSM relations in genus 5. Return the largest absolute value of the relation.
 """
 function fgsm(τ::Array{<:Number}, chars=fgsm_chars())
-    R = RiemannMatrix(τ);
+    R = RiemannMatrix(τ, nderivs=0);
     return fgsm(R, chars);
 end
 
