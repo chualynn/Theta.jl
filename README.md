@@ -13,11 +13,16 @@ For more information, refer to our upcoming preprint.
 
 Download Julia 1.1. Start Julia and run
 ```julia
-julia> import Pkg
-julia> Pkg.add("Theta")
+import Pkg
+Pkg.add("Theta")
 ```
 
 ## Examples
+First load the package in Julia.
+```julia
+using Theta
+```
+
 We start with a matrix `M` in the Siegel upper-half space.
 ```julia
 M = [0.794612+1.9986im 0.815524+1.95836im 0.190195+1.21249im 0.647434+1.66208im 0.820857+1.68942im; 
