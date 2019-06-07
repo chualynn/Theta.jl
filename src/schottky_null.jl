@@ -53,7 +53,7 @@ function schottky_null(R::RiemannMatrix, tol::Real=1.0e-8)
     theta_value = abs(theta(z, R, char=char));
     if theta_value < tol # check that there is a vanishing theta null
         H = hessian(z, R, char);
-        hessian_eigvals = filter(x -> abs(x) < tol, eigvals(H));
+        hessian_eigvals = filter(x -> abs(x) > tol, eigvals(H));
         return [char, H, hessian_eigvals]
     end
     return theta_value
