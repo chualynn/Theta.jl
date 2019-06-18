@@ -7,7 +7,7 @@
 Theta.jl is a Julia package for computing the Riemann theta function and its
 derivatives.
 
-For more information, refer to our upcoming preprint.
+For more information, refer to our [preprint](https://arxiv.org/abs/1906.06507).
 
 ## Installation
 
