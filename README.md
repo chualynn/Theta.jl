@@ -11,7 +11,7 @@ For more information, refer to our [preprint](https://arxiv.org/abs/1906.06507).
 
 ## Installation
 
-Download Julia 1.1. Start Julia and run
+Download Julia 1.4. Start Julia and run
 ```julia
 import Pkg
 Pkg.add("Theta")
