@@ -18,11 +18,11 @@ struct RiemannMatrix
 
     # Arguments
     - `τ::Array{<:Number}`: 2-dimensional array of complex numbers
-    - `siegel::Bool=true`: do a siegel transformation on τ if true, and use the input matrix otherwise
+    - `siegel::Bool=false`: do a siegel transformation on τ if true, and use the input matrix otherwise
     - `ϵ::Real=1.0e-12`: absolute error in value of theta function or its derivatives
     - `nderivs::Integer=4`: highest order of the derivatives of the theta function
     """
-    function RiemannMatrix(τ::Array{<:Number}; siegel::Bool=true, ϵ::Real=1.0e-12, nderivs::Integer=4)
+    function RiemannMatrix(τ::Array{<:Number}; siegel::Bool=false, ϵ::Real=1.0e-12, nderivs::Integer=4)
         τ = (siegel ? siegel_transform(τ)[2] : τ);
         X = real(τ);
         Y = imag(τ);
