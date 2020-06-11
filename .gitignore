@@ -5,3 +5,4 @@ deps/deps.jl
 *.jl~
 docs/build/
 *.yml~
+Manifest.toml
