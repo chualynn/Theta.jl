@@ -7,6 +7,9 @@ julia:
   - 1.4
   - nightly
 
+codecov: true
+coveralls: true
+
 notifications:
   email: false
 
