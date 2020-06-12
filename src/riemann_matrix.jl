@@ -12,7 +12,7 @@ struct RiemannMatrix
     ellipsoid::Array{} # points to sum over for computing theta functions
 
     """
-        RiemannMatrix(τ, siegel=true, ϵ=1.0e-12, nderivs=4)
+        RiemannMatrix(τ, siegel=false, ϵ=1.0e-12, nderivs=4)
 
     Construct a RiemannMatrix type using a matrix τ in the Siegel upper-half space, for use in computing the Riemann theta function.
 
@@ -21,6 +21,11 @@ struct RiemannMatrix
     - `siegel::Bool=false`: do a siegel transformation on τ if true, and use the input matrix otherwise
     - `ϵ::Real=1.0e-12`: absolute error in value of theta function or its derivatives
     - `nderivs::Integer=4`: highest order of the derivatives of the theta function
+
+    # Examples
+    ```julia
+    julia> RiemannMatrix([1+im -1; -1 1+im], siegel=true, nderivs=2)
+    ```
     """
     function RiemannMatrix(τ::Array{<:Number}; siegel::Bool=false, ϵ::Real=1.0e-12, nderivs::Integer=4)
         τ = (siegel ? siegel_transform(τ)[2] : τ);
@@ -40,10 +45,18 @@ end
     random_siegel(g)
 
 Sample a random matrix in the Siegel upper half space with genus g.
+
+# Arguments
+- `g::Integer`: genus.
+
+# Examples
+```julia
+julia> random_siegel(5)
+```
 """
 function random_siegel(g::Integer)
     Mx = 2*rand(g, g) - ones(g,g); # entries are random between [-1,1)
     My = 2*rand(g, g) - ones(g,g); # entries are random between [-1,1)
-    τ = Symmetric((1/2)*(transpose(Mx) + Mx)) + Symmetric(transpose(My)*My)*im; # symmetric real part and psd imaginary part
+    τ = convert(Array, Symmetric((1/2)*(transpose(Mx) + Mx)) + Symmetric(transpose(My)*My)*im); # symmetric real part and psd imaginary part
     return τ;
 end
