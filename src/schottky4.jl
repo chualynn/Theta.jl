@@ -30,7 +30,7 @@ function schottky_genus_4(τ::Array{<:Number})
         c2 = theta(z, R, char=remainder_char(m2+n));
         c3 = theta(z, R, char=remainder_char(m3+n));
         p1 *= c1;
-0        p2 *= c2;
+        p2 *= c2;
         p3 *= c3;
     end
     schottky_poly = p1^2 + p2^2 + p3^2 - 2*p1*p2 - 2*p1*p3 - 2*p2*p3;
