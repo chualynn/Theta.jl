@@ -2,6 +2,15 @@
     schottky_genus_4(τ)
 
 Compute the value of the genus 4 Schottky-Igusa polynomial, given as input a 4x4 matrix in the Siegel upper half space.
+
+# Arguments
+- `τ::Array{<:Number}`: 2-dimensional array of complex numbers
+
+# Examples
+```julia
+julia> τ = random_siegel(4);
+julia> schottky_genus_4(τ)
+```
 """
 function schottky_genus_4(τ::Array{<:Number})
     R = RiemannMatrix(τ, siegel=false, ϵ=1.0e-10, nderivs=0);
@@ -21,7 +30,7 @@ function schottky_genus_4(τ::Array{<:Number})
         c2 = theta(z, R, char=remainder_char(m2+n));
         c3 = theta(z, R, char=remainder_char(m3+n));
         p1 *= c1;
-        p2 *= c2;
+0        p2 *= c2;
         p3 *= c3;
     end
     schottky_poly = p1^2 + p2^2 + p3^2 - 2*p1*p2 - 2*p1*p3 - 2*p2*p3;
@@ -32,6 +41,15 @@ end
     random_nonschottky_genus_4(tol=0.1, trials=100)
 
 Find a random 4x4 matrix in the Siegel upper half space which is not in the Schottky locus, up to the input tolerance and number of trials.
+
+# Arguments
+- `tol::Real=0.1`: tolerance for deciding whether absolute value of Schottky-Igusa polynomial is nonzero.
+- `trials::Integer=100`: number of trials
+
+# Examples
+```julia
+julia> random_nonschottky_genus_4(tol=0.1, trials=10)
+```
 """
 function random_nonschottky_genus_4(tol::Real=0.1, trials::Integer=100)
     t = 0; # largest value of schottky polynomial

@@ -2,6 +2,14 @@
     siegel_transform(τ)
 
 Compute Siegel transformation on input Riemann matrix.
+
+# Arguments
+- `τ::Array{<:Number}`: 2-dimensional array of complex numbers
+
+# Examples
+```julia
+julia> siegel_transform([1+im -1; -1 1+im])
+```
 """
 function siegel_transform(τ::Array{<:Number})
     M = copy(τ);
@@ -40,6 +48,17 @@ end
     symplectic_transform(Γ, τ)
 
 Compute symplectic group action of Γ on τ.
+
+# Arguments
+- `Γ::Array{<:Number}`: 2-dimensional array of numbers
+- `τ::Array{<:Number}`: 2-dimensional array of complex numbers
+
+# Examples
+```julia
+julia> τ = [1+im -1; -1 1+im];
+julia> Γ = siegel_transform(τ)[1];
+julia> symplectic_transform(Γ, τ)
+```
 """
 function symplectic_transform(Γ::Array{<:Number}, τ::Array{<:Number})
     g = size(τ)[1];

@@ -24,6 +24,11 @@ end
     accola_chars()
 
 Compute all characteristics in the 8 Accola special theta relations, for a fixed fundamental system.
+
+# Examples
+```julia
+julia> accola_chars()
+```
 """
 function accola_chars()
     chars = [[[1,0,0,0,0],[0,0,0,0,0]],
@@ -53,6 +58,16 @@ end
     accola(τ, chars=accola_chars())
 
 Compute the 8 Accola special theta relations, without taking the product over the signs of the square roots. Return the largest absolute value of the special theta relation.
+
+# Arguments
+- `τ::Array{<:Number}`: 2-dimensional array of complex numbers
+- `chars=accola_chars()`: characteristics in the 8 Accola special theta relations
+
+# Examples
+```julia
+julia> τ = random_siegel(5);
+julia> accola(τ)
+```
 """
 function accola(τ::Array{<:Number}, chars=accola_chars())
     R = RiemannMatrix(τ, nderivs=0);
@@ -64,6 +79,16 @@ end
     accola(R, chars=accola_chars())
 
 Compute the 8 Accola special theta relations, without taking the product over the signs of the square roots. Return the largest absolute value of the special theta relation.
+
+# Arguments
+- `R::RiemannMatrix`: RiemannMatrix type containing matrix.
+- `chars=accola_chars()`: characteristics in the 8 Accola special theta relations
+
+# Examples
+```julia
+julia> R = RiemannMatrix(random_siegel(5));
+julia> accola(R)
+```
 """
 function accola(R::RiemannMatrix, chars=accola_chars())
     z = zeros(5);
@@ -86,6 +111,15 @@ end
     random_nonaccola(tol=0.1, trials=100)
 
 Find a random genus 5 matrix in the Siegel upper half space which is not in the Accola locus, such that the largest Accola relation has absolute value at least tol, using input number of trials.
+
+# Arguments
+- `tol::Real=0.1`: tolerance for deciding whether absolute value of largest Accola relation is nonzero.
+- `trials::Integer=100`: number of trials
+
+# Examples
+```julia
+julia> random_nonaccola(tol=0.1, trials=10)
+```
 """
 function random_nonaccola(tol::Real=0.1, trials::Integer=100)
     chars = accola_chars();

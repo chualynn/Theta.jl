@@ -16,6 +16,16 @@ end
     fgsm(τ, chars=fgsm_chars())
 
 Compute the FGSM relations in genus 5. Return the largest absolute value of the relation.
+
+# Arguments
+- `τ::Array{<:Number}`: 2-dimensional array of complex numbers
+- `chars=fgsm_chars()`: characteristics in the FGSM relations
+
+# Examples
+```julia
+julia> τ = random_siegel(5);
+julia> fgsm(τ)
+```
 """
 function fgsm(τ::Array{<:Number}, chars=fgsm_chars())
     R = RiemannMatrix(τ, nderivs=0);
@@ -26,6 +36,16 @@ end
     fgsm(R, chars=fgsm_chars())
 
 Compute the FGSM relations in genus 5. Return the largest absolute value of the relation.
+
+# Arguments
+- `R::RiemannMatrix`: RiemannMatrix type containing matrix.
+- `chars=fgsm_chars()`: characteristics in the FGSM relations
+
+# Examples
+```julia
+julia> R = RiemannMatrix(random_siegel(5));
+julia> fgsm(τ)
+```
 """
 function fgsm(R::RiemannMatrix, chars=fgsm_chars())
     max_fgsm = maximum([fgsm_s(R, c) for c in chars]);
@@ -37,6 +57,15 @@ end
     random_nonfgsm(tol=0.1, trials=100)
 
 Find a random genus 5 matrix in the Siegel upper half space which is not in the FGSM locus, such that the largest FGSM relation has absolute value at least tol, using input number of trials.
+
+# Arguments
+- `tol::Real=0.1`: tolerance for deciding whether absolute value of largest FGSM relation is nonzero.
+- `trials::Integer=100`: number of trials
+
+# Examples
+```julia
+julia> random_nonfgsm(tol=0.1, trials=10)
+```
 """
 function random_nonfgsm(tol::Real=0.1, trials::Integer=100)
     chars = fgsm_chars();
@@ -59,6 +88,11 @@ end
     fgsm_chars()
 
 Compute the characteristics used in the FGSM relations in genus 5.
+
+# Examples
+```julia
+julia> fgsm_chars()
+```
 """
 function fgsm_chars()
     chars_34 = [[[[0,0,0,0,0], [0,0,0,0,0]],
