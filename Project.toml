@@ -1,7 +1,7 @@
 name = "Theta"
 uuid = "42bdb5c4-78fb-11e9-2233-215979c148c4"
 authors = ["Chua Lynn <chualynn@berkeley.edu>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 GSL = "92c85e6c-cbff-5e0c-80f7-495c94daaecd"
