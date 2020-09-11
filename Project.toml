@@ -10,6 +10,8 @@ NLopt = "76087f3c-5699-56af-9a33-bf431cd00edd"
 
 [compat]
 julia = "1"
+NLopt = "0.5.1"
+GSL = "0.5.1"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
