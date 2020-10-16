@@ -122,8 +122,6 @@ end
 
 
 
-@testset "Azygetic" begin
-    @test check_azygetic([[[1,0,1,0], [1,0,1,0]], [[0,0,0,1], [1,0,0,0]], [[0,0,1,1], [1,0,1,1]]]) == true
-end
+
 
 
