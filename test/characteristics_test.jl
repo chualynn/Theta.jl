@@ -9,3 +9,4 @@ import Theta: parity_char, remainder_char
     @test odd_theta_char(1) == [[[1],[1]]]
     @test check_azygetic([[[1,0,1,0], [1,0,1,0]], [[0,0,0,1], [1,0,0,0]], [[0,0,1,1], [1,0,1,1]]]) == true
 end
+

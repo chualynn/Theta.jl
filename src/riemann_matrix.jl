@@ -57,6 +57,6 @@ julia> random_siegel(5)
 function random_siegel(g::Integer)
     Mx = 2*rand(g, g) - ones(g,g); # entries are random between [-1,1)
     My = 2*rand(g, g) - ones(g,g); # entries are random between [-1,1)
-    τ = convert(Array, Symmetric((1/2)*(transpose(Mx) + Mx)) + Symmetric(transpose(My)*My)*im); # symmetric real part and psd imaginary part
-    return τ;
+    τ = Symmetric((1/2)*(transpose(Mx) + Mx)) + Symmetric(transpose(My)*My)*im; # symmetric real part and psd imaginary part
+    return convert(Array, τ);
 end
