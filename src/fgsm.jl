@@ -73,7 +73,7 @@ function random_nonfgsm(tol::Real=0.1, trials::Integer=100)
     i = 0; # counter for number of trials
     max_matrix = rand(5,5); # stores candidate matrix
     while t < tol && i < trials
-        τ = random_siegel(5);
+        τ = convert(Array, random_siegel(5));
         s = fgsm(τ, chars);
         if s > t
             t = s;
