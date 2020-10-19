@@ -164,6 +164,18 @@ fgsm
 random_nonfgsm
 ```
 
+```@docs
+min_even_theta_char
+```
+
+```@docs
+schottky_null
+```
+
+```@docs
+hessian
+```
+
 ## Index
 
 ```@index
