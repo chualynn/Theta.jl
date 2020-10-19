@@ -56,7 +56,7 @@ function random_nonschottky_genus_4(tol::Real=0.1, trials::Integer=100)
     i = 0; # counter for number of trials
     max_matrix = rand(4,4); # stores best non-schottky candidate
     while t < tol && i < trials
-        τ = random_siegel(4);
+        τ = convert(Array, random_siegel(4));
         s = schottky_genus_4(τ);
         if abs(s) > t
             t = abs(s)
